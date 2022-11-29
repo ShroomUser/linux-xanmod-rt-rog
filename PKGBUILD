@@ -145,7 +145,6 @@ source=("https://cdn.kernel.org/pub/linux/kernel/v${_branch}/linux-${_major}.tar
         "sys-kernel_arch-sources-g14_files-0047-asus-nb-wmi-Add-tablet_mode_sw-lid-flip.patch"
         "sys-kernel_arch-sources-g14_files-0048-asus-nb-wmi-fix-tablet_mode_sw_int.patch"
         "sys-kernel_arch-sources-g14_files-0049-ALSA-hda-realtek-Add-quirk-for-ASUS-M16-GU603H.patch"
-        
 )
         #"patch-${pkgver}-xanmod${xanmod}.xz::https://sourceforge.net/projects/xanmod/files/releases/stable/${pkgver}-xanmod${xanmod}/patch-${pkgver}-xanmod${xanmod}.xz/download"
 validpgpkeys=(
@@ -164,7 +163,7 @@ done
 sha256sums=('5c2443a5538de52688efb55c27ab0539c1f5eb58c0cfd16a2b9fbb08fd81788e'
             'SKIP'
             '394cd4fbd74f73f6982e112ae1759a79eb870b9531f89ee00dc648383586da7c'
-            '4aa1cdf92daa2cd056532f6e9ecc8b122cca450637268b45c70eaef143a31cdd'
+            '05d8119dcf06b20d585cef21b5560c8e53c6c97b6fddef7f0afe8c545734b64a'
             'dda2e928f3b02c28e71d4e99f90b499b4c99a265d30fceec7dc1dd7082afc285'
             '40e4c300be6681ab3b30042eb4bb5981081ce029b2bdd4773a38b4a9f65e943e'
             'a51b11bd64915454981aeb0aa680efb508a24a6df552caa17cd01e31a776a7e5'
@@ -195,6 +194,12 @@ export KBUILD_BUILD_TIMESTAMP=${KBUILD_BUILD_TIMESTAMP:-$(date -Ru${SOURCE_DATE_
 
 prepare() {
   cd linux-${_major}
+
+  # Apply VFIO fix
+  echo Applying experimental VFIO patch.
+  wget https://raw.githubusercontent.com/Kinsteen/win10-gpu-passthrough/main/pat_patch.diff
+  mv pat_patch.diff ..
+  patch -p0 < ../pat_patch.diff arch/x86/mm/pat/memtype_interval.c
 
   # Apply Xanmod patch
   patch -Np1 -i ../patch-${pkgver}-rt${_rt}-xanmod${xanmod}
