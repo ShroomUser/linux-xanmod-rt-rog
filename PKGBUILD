@@ -72,7 +72,7 @@ fi
 
 pkgbase=linux-xanmod-rt-rog
 _major=6.0
-pkgver=${_major}.7
+pkgver=${_major}.11
 _branch=6.x
 _rt=14
 xanmod=1
@@ -162,8 +162,8 @@ done
 
 sha256sums=('5c2443a5538de52688efb55c27ab0539c1f5eb58c0cfd16a2b9fbb08fd81788e'
             'SKIP'
-            '394cd4fbd74f73f6982e112ae1759a79eb870b9531f89ee00dc648383586da7c'
-            '05d8119dcf06b20d585cef21b5560c8e53c6c97b6fddef7f0afe8c545734b64a'
+            'fb2dca08a4b263b3edb3c394b8067a8d981afd863af309f74e37790a6e9648bc'
+            '3d5ed52a91973a243c2fdddf032b2a6bc7c73c0e08f5d1c23b4c91914a94dae9'
             'dda2e928f3b02c28e71d4e99f90b499b4c99a265d30fceec7dc1dd7082afc285'
             '40e4c300be6681ab3b30042eb4bb5981081ce029b2bdd4773a38b4a9f65e943e'
             'a51b11bd64915454981aeb0aa680efb508a24a6df552caa17cd01e31a776a7e5'
