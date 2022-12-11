@@ -140,11 +140,16 @@ source=("https://cdn.kernel.org/pub/linux/kernel/v${_branch}/linux-${_major}.tar
         0001-asus-wmi-Expand-support-of-GPU-fan-to-read-RPM-and-l.patch
         #0001-platform-x86-asus-wmi-Add-safety-checks-to-dgpu-egpu.patch
         0001-platform-x86-asus-wmi-Add-support-for-ROG-X16-tablet.patch
+        "0001-Revert-perf-x86-intel-Fix-unchecked-MSR-access-error.patch"
+        "0023-v2-drm-amdgpu-sdma_v4_0-turn-off-SDMA-ring-buffer-in-the-s2idle-suspend.patch"
+        "0024-V8-0-4-PCI-vmd-Enable-PCIe-ASPM-and-LTR-on-select-hardware.patch"
+        #"0025-amd-cezanne-s2idle-10ms.patch"
         
         
         "sys-kernel_arch-sources-g14_files-0047-asus-nb-wmi-Add-tablet_mode_sw-lid-flip.patch"
         "sys-kernel_arch-sources-g14_files-0048-asus-nb-wmi-fix-tablet_mode_sw_int.patch"
         "sys-kernel_arch-sources-g14_files-0049-ALSA-hda-realtek-Add-quirk-for-ASUS-M16-GU603H.patch"
+        
 )
         #"patch-${pkgver}-xanmod${xanmod}.xz::https://sourceforge.net/projects/xanmod/files/releases/stable/${pkgver}-xanmod${xanmod}/patch-${pkgver}-xanmod${xanmod}.xz/download"
 validpgpkeys=(
@@ -163,7 +168,7 @@ done
 sha256sums=('5c2443a5538de52688efb55c27ab0539c1f5eb58c0cfd16a2b9fbb08fd81788e'
             'SKIP'
             'fb2dca08a4b263b3edb3c394b8067a8d981afd863af309f74e37790a6e9648bc'
-            '3d5ed52a91973a243c2fdddf032b2a6bc7c73c0e08f5d1c23b4c91914a94dae9'
+            'd2ff8f1647d353820a97d4cf56481a3473bda0faf80fc55cd836e34ab019bbff'
             'dda2e928f3b02c28e71d4e99f90b499b4c99a265d30fceec7dc1dd7082afc285'
             '40e4c300be6681ab3b30042eb4bb5981081ce029b2bdd4773a38b4a9f65e943e'
             'a51b11bd64915454981aeb0aa680efb508a24a6df552caa17cd01e31a776a7e5'
@@ -184,6 +189,9 @@ sha256sums=('5c2443a5538de52688efb55c27ab0539c1f5eb58c0cfd16a2b9fbb08fd81788e'
             'abd1d8def25f7fae0d5590c7fd36ea4dcc479d16d268615d8b3d95c8e8446d44'
             '9efcef7aab8094ed3596cba872527d6e838c760ba4f4c5b7b1586a963b71d576'
             'ddcd442b780bffde86c51373d6e24c77ecc890375cd0be361d2de9f26826f845'
+            '6739a42bf9d233cb58ae9a69c3f78959175de695e2d4a7e66bb9984fcf5c0f7e'
+            '7836244db0c94ebc3ab7ed6a749ebb04ec044f8cc804e7951b077dea8c629ca0'
+            'f036ac8a49153f66d7d8638508cfe0b4a158d12faf30d2c671b04a6b7b606b3b'
             '15e912a66e4bbce1cf0450f1dc6610653df29df8dd6d5426f9c1b039490436c8'
             'e9e4b03b836e1a86a2a5dc70b0d5512348eb19742f83bee794a3ab7d91bd41cf'
             '982a31e47d3d586789e1b3cdda25f75e3b71d810e7494202089b8f2cef7c0ef9')
